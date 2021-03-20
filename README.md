@@ -19,5 +19,6 @@ Rscript R/codon_to_aa.R [path/to/input/filename] [path/to/output/filename]
 ## Test
 A test input file is provided as an example. If the entire repo was cloned locally you can try the tool using the test file as follows:
 ```bash
+cd inscripta_challenge
 Rscript R/codon_to_aa.R data/test.txt data/output_test.txt
 ```
