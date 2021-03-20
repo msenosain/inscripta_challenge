@@ -53,6 +53,17 @@ CodonToAA <- function() {
     # Standarize input to lower case
     input <- tolower(input)
 
+    # Iterate over the input to identify the first open reading frame
+    input_sp <- strsplit(input, "")[[1]]
+
+    for(i in 1:length(input_sp)){
+        cod <- paste0(input_sp[i], input_sp[i+1], input_sp[i+2], collapse = '')
+        if(cod=='atg'){
+            break
+        }
+    }
+    input <- paste0(input_sp[i:length(input_sp)], collapse = '')
+
     # Determine number of codons
     n_cod <- nchar(input)%/%3
 
@@ -71,11 +82,10 @@ CodonToAA <- function() {
     # Translate nucleotide sequence
     output <- codon_t$AA[match(input, codon_t$codon)]
 
-    # Find the START and STOP codons
-    start_i <- which(input == 'atg')[1]
+    # Find the STOP codon
     stop_i <- which(output == '*')[1]
-    output <- output[start_i:(stop_i-1)]
-    output <- paste(output, collapse = '')
+    output <- output[1:(stop_i-1)]
+    output <- paste0(output, collapse = '')
 
     # Write the output as a txt file
     if(is.na(args[2])){
@@ -88,6 +98,7 @@ CodonToAA <- function() {
 
 
 }
+
 
 CodonToAA()
 
