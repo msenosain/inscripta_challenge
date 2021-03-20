@@ -1,4 +1,14 @@
-main <- function() {
+CodonToAA <- function() {
+    #' Takes a nucleotide sequence (characters in a txt file)
+    #' 
+    #' Finds the start codon 'ATG'
+    #' 
+    #' Translates to amino acid sequence
+    #'
+    #' Writes a .txt file with the output
+
+
+
     # Load libraries
     require(dplyr)
 
@@ -79,6 +89,6 @@ main <- function() {
 
 }
 
-main()
+CodonToAA()
 
 
