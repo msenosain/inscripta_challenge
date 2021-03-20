@@ -1,7 +1,7 @@
 CodonToAA <- function() {
     #' Takes a nucleotide sequence (characters in a txt file)
     #' 
-    #' Finds the start codon 'ATG'
+    #' Finds the start codon and stop codons
     #' 
     #' Translates to amino acid sequence
     #'
