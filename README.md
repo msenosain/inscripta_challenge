@@ -17,7 +17,7 @@ Rscript R/codon_to_aa.R [path/to/input/filename] [path/to/output/filename]
 * If an output file path is not included, the output will be saved in the current directory with the name `output_translation.txt`
 
 ## Test
-A test input file is provided as an example. If the entire repo was cloned locally you can try the tool using the test file as follows:
+A test input file is provided as an example. Once the repo was cloned locally you can try the tool using the test file as follows:
 ```bash
 cd inscripta_challenge
 Rscript R/codon_to_aa.R data/test.txt data/output_test.txt
